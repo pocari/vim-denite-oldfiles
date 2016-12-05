@@ -13,6 +13,7 @@ class Source(Base):
 
     def on_init(self, context):
         self.vim.command('wviminfo')
+        self.vim.command('rviminfo!')
 
     def gather_candidates(self, context):
         return [

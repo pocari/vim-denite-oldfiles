@@ -11,6 +11,9 @@ class Source(Base):
         self.name = 'oldfiles'
         self.kind = 'file'
 
+    def on_init(self, context):
+        self.vim.command('wviminfo')
+
     def gather_candidates(self, context):
         return [
             {'word': x, 'action__path': x}
